@@ -17,6 +17,9 @@ document.getElementById("btn-addmoney").addEventListener('click',function(event)
     if(pininput === '1234' && amountinput >= '0' ){
         const newbalance = balanceNumber + addbalance;
         document.getElementById("av-balance").innerText = newbalance;
+        document.getElementById("add-amount-number").value = '';
+        document.getElementById("add-pin-number").value = '';
+
     }
     else{
         alert('please input something valid');
@@ -42,6 +45,8 @@ document.getElementById("btn-cashout").addEventListener('click',function(event){
     if(pininput === '1234'){
         const newbalance = balanceNumber - addbalance;
         document.getElementById("av-balance").innerText = newbalance;
+        document.getElementById("pin-number").value = '';
+        document.getElementById("cashout-amount-number").value = '';
     }
     else{
         alert('please input something valid');
