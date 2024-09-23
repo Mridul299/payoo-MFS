@@ -1,3 +1,5 @@
+// -----------backdated--------
+
 document.getElementById('add-money').addEventListener('click',function(){
     document.getElementById('addmoney-form').classList.remove('hidden');
     document.getElementById('cashout-form').classList.add('hidden');
@@ -8,8 +10,8 @@ document.getElementById('add-money').addEventListener('click',function(){
 
 document.getElementById("btn-addmoney").addEventListener('click',function(event){
     event.preventDefault();
-    const pininput = document.getElementById("add-pin-number").value;
-    const amountinput = document.getElementById("add-amount-number").value;
+    const pininput = inputvalue("add-pin-number");
+    const amountinput = inputvalue ("add-amount-number");
     const addbalance = parseFloat(amountinput);
     const balance = document.getElementById("av-balance").innerText;
     const balanceNumber = parseFloat(balance);
@@ -17,6 +19,8 @@ document.getElementById("btn-addmoney").addEventListener('click',function(event)
     if(pininput === '1234' && amountinput >= '0' ){
         const newbalance = balanceNumber + addbalance;
         document.getElementById("av-balance").innerText = newbalance;
+
+        
         document.getElementById("add-amount-number").value = '';
         document.getElementById("add-pin-number").value = '';
 
@@ -36,8 +40,8 @@ document.getElementById('cash-out').addEventListener('click',function(){
 
 document.getElementById("btn-cashout").addEventListener('click',function(event){
     event.preventDefault();
-    const pininput = document.getElementById("pin-number").value;
-    const amountinput = document.getElementById("cashout-amount-number").value;
+    const pininput = inputvalue("pin-number");
+    const amountinput =inputvalue("cashout-amount-number");
     const addbalance = parseFloat(amountinput);
     const balance = document.getElementById("av-balance").innerText;
     const balanceNumber = parseFloat(balance);
